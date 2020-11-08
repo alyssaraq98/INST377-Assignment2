@@ -24,7 +24,7 @@ function displayMatches1() {
     } else {
         html = matchArray.map(place => {
             return `
-                <li class="listItem">
+                <li>
                     <span class="name">${'Name: ' + place.name}</span><br>
                     <span class="hand_washing">${'Owner: ' + place.owner}</span><br>
                     <span class="address">
