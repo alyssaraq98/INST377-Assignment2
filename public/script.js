@@ -25,17 +25,16 @@ function displayMatches() {
         html = matchArray.map(place => {
             return `
                 <li>
-                    <span class="name">${'Name: ' + place.name}</span><br>
-                    <span class="hand_washing">${'Owner: ' + place.owner}</span><br>
+                    <span class="name">${'Name: ' + place.name.toLowerCase()}</span><br>
+                    <span class="hand_washing">${'Owner: ' + place.owner.toLowerCase()}</span><br>
                     <span class="address">
                         ${'Address: '} 
-                        ${place.address_line_1}, 
-                        ${place.address_line_2}, 
-                        ${place.city}, 
+                        ${place.address_line_1.toLowerCase()}, 
+                        ${place.city.toLowerCase()}, 
                         ${place.state}
                         ${place.zip}</span><br>
-                    <span class="category">${'Category: ' + place.category}</span><br>
-                    <span class="hand_washing">${'Hand Washing: ' + place.proper_hand_washing}</span>
+                    <span class="category">${'Category: ' + place.category.toLowerCase()}</span><br>
+                    <span class="hand_washing">${'Hand Washing: ' + place.proper_hand_washing.toLowerCase()}</span>
                 </li>
             `;
         }).join('');
