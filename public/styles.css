@@ -44,3 +44,14 @@ body {
   border-radius: 5px;
   justify-content: left;
 }
+
+/* For Mobile */
+@media only screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; 
+  }
+}
