@@ -15,35 +15,36 @@ function findMatches(wordToMatch) {
     });
 }
 
-function displayMatches() {
+function displayMatches1() {
     const matchArray = findMatches(this.value);
     console.log("i'm trying to display matches!");
-    const html = matchArray.map(place => {
-        return `
-            <li class="listItem">
-                <span class="name">${'Name: ' + place.name}</span><br>
-                <span class="hand_washing">${'Owner: ' + place.owner}</span><br>
-                <span class="address">
-                    ${'Address: '} 
-                    ${place.address_line_1}, 
-                    ${place.address_line_2}, 
-                    ${place.city}, 
-                    ${place.state}
-                    ${place.zip}</span><br>
-                <span class="category">${'Category: ' + place.category}</span><br>
-                <span class="hand_washing">${'Hand Washing: ' + place.proper_hand_washing}</span>
-            </li>
-        `;
-    }).join('');
+    let html = [];
+    if (this.value.length == 0) {
+        let html = [];
+    } else {
+        html = matchArray.map(place => {
+            return `
+                <li class="listItem">
+                    <span class="name">${'Name: ' + place.name}</span><br>
+                    <span class="hand_washing">${'Owner: ' + place.owner}</span><br>
+                    <span class="address">
+                        ${'Address: '} 
+                        ${place.address_line_1}, 
+                        ${place.address_line_2}, 
+                        ${place.city}, 
+                        ${place.state}
+                        ${place.zip}</span><br>
+                    <span class="category">${'Category: ' + place.category}</span><br>
+                    <span class="hand_washing">${'Hand Washing: ' + place.proper_hand_washing}</span>
+                </li>
+            `;
+        }).join('');
+    }
     suggestions.innerHTML = html;
-    console.log("I reached here.");
-
-
+    console.log("I reached the display.");
 }
 
 const searchInput = document.querySelector('.searchInput');
 const suggestions = document.querySelector('.filteredList');
 
-searchInput.addEventListener('change', findMatches);
-searchInput.addEventListener('keyup', findMatches);
-searchInput.addEventListener('keyup', displayMatches);
+searchInput.addEventListener('keyup', displayMatches1);
