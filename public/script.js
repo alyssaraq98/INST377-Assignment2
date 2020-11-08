@@ -15,7 +15,7 @@ function findMatches(wordToMatch) {
     });
 }
 
-function displayMatches1() {
+function displayMatches() {
     const matchArray = findMatches(this.value);
     console.log("i'm trying to display matches!");
     let html = [];
@@ -47,4 +47,4 @@ function displayMatches1() {
 const searchInput = document.querySelector('.searchInput');
 const suggestions = document.querySelector('.filteredList');
 
-searchInput.addEventListener('keyup', displayMatches1);
+searchInput.addEventListener('keyup', displayMatches);
